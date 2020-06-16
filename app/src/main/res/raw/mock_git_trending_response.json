@@ -1,0 +1,370 @@
+[
+  {
+    "author": "xingshaocheng",
+    "name": "architect-awesome",
+    "avatar": "https://github.com/xingshaocheng.png",
+    "url": "https://github.com/xingshaocheng/architect-awesome",
+    "description": "后端架构师技术图谱",
+    "language": "Go",
+    "languageColor": "#3572A5",
+    "stars": 7333,
+    "forks": 1546,
+    "currentPeriodStars": 1528,
+    "builtBy": [
+      {
+        "href": "https://github.com/viatsko",
+        "avatar": "https://avatars0.githubusercontent.com/u/376065",
+        "username": "viatsko"
+      }
+    ]
+  },
+  {
+    "author": "google",
+    "name": "gvisor",
+    "avatar": "https://github.com/google.png",
+    "url": "https://github.com/google/gvisor",
+    "description": "Container Runtime Sandbox",
+    "language": "Go",
+    "languageColor": "#3572A5",
+    "stars": 3346,
+    "forks": 118,
+    "currentPeriodStars": 1624,
+    "builtBy": [
+      {
+        "href": "https://github.com/viatsko",
+        "avatar": "https://avatars0.githubusercontent.com/u/376065",
+        "username": "viatsko"
+      }
+    ]
+  },
+  {
+    "author": "davideuler",
+    "name": "architecture.of.internet-product",
+    "avatar": "https://github.com/davideuler.png",
+    "url": "https://github.com/davideuler/architecture.of.internet-product",
+    "description": "互联网公司技术架构，微信/淘宝/腾讯/阿里/美团点评/百度/微博/Google/Facebook/Amazon/eBay的架构，欢迎PR补充",
+    "language": "Go",
+    "languageColor": "#3572A5",
+    "stars": 2763,
+    "forks": 416,
+    "currentPeriodStars": 1427,
+    "builtBy": [
+      {
+        "href": "https://github.com/viatsko",
+        "avatar": "https://avatars0.githubusercontent.com/u/376065",
+        "username": "viatsko"
+      }
+    ]
+  },
+  {
+    "author": "kusti8",
+    "name": "proton-native",
+    "avatar": "https://github.com/kusti8.png",
+    "url": "https://github.com/kusti8/proton-native",
+    "description": "A React environment for cross platform native desktop apps",
+    "language": "JavaScript",
+    "languageColor": "#3572A5",
+    "stars": 4711,
+    "forks": 124,
+    "currentPeriodStars": 1186,
+    "builtBy": [
+      {
+        "href": "https://github.com/viatsko",
+        "avatar": "https://avatars0.githubusercontent.com/u/376065",
+        "username": "viatsko"
+      }
+    ]
+  },
+  {
+    "author": "KikiLetGo",
+    "name": "VirusBroadcast",
+    "avatar": "https://github.com/KikiLetGo.png",
+    "url": "https://github.com/KikiLetGo/VirusBroadcast",
+    "description": "A java virus broadcast simulation",
+    "language": "Java",
+    "languageColor": "#b07219",
+    "stars": 701,
+    "forks": 266,
+    "currentPeriodStars": 545,
+    "builtBy": [
+      {
+        "username": "DubheBroken",
+        "href": "https://github.com/DubheBroken",
+        "avatar": "https://avatars1.githubusercontent.com/u/34338289"
+      },
+      {
+        "username": "BruceYong",
+        "href": "https://github.com/BruceYong",
+        "avatar": "https://avatars3.githubusercontent.com/u/8445634"
+      },
+      {
+        "username": "KikiLetGo",
+        "href": "https://github.com/KikiLetGo",
+        "avatar": "https://avatars0.githubusercontent.com/u/42661452"
+      }
+    ]
+  },
+  {
+    "author": "bradtraversy",
+    "name": "vanillawebprojects",
+    "avatar": "https://github.com/bradtraversy.png",
+    "url": "https://github.com/bradtraversy/vanillawebprojects",
+    "description": "Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries",
+    "language": "JavaScript",
+    "languageColor": "#f1e05a",
+    "stars": 2405,
+    "forks": 278,
+    "currentPeriodStars": 935,
+    "builtBy": [
+      {
+        "username": "bradtraversy",
+        "href": "https://github.com/bradtraversy",
+        "avatar": "https://avatars0.githubusercontent.com/u/5550850"
+      },
+      {
+        "username": "amatzen",
+        "href": "https://github.com/amatzen",
+        "avatar": "https://avatars1.githubusercontent.com/u/10503999"
+      },
+      {
+        "username": "coliff",
+        "href": "https://github.com/coliff",
+        "avatar": "https://avatars2.githubusercontent.com/u/1212885"
+      },
+      {
+        "username": "florinpop17",
+        "href": "https://github.com/florinpop17",
+        "avatar": "https://avatars0.githubusercontent.com/u/6692364"
+      }
+    ]
+  },
+  {
+    "author": "BlankerL",
+    "name": "DXY-2019-nCoV-Data",
+    "avatar": "https://github.com/BlankerL.png",
+    "url": "https://github.com/BlankerL/DXY-2019-nCoV-Data",
+    "description": "2019新型冠状病毒疫情时间序列数据仓库",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "stars": 274,
+    "forks": 63,
+    "currentPeriodStars": 85,
+    "builtBy": [
+      {
+        "username": "BlankerL",
+        "href": "https://github.com/BlankerL",
+        "avatar": "https://avatars0.githubusercontent.com/u/24969376"
+      }
+    ]
+  },
+  {
+    "author": "terraform-providers",
+    "name": "terraform-provider-aws",
+    "avatar": "https://github.com/terraform-providers.png",
+    "url": "https://github.com/terraform-providers/terraform-provider-aws",
+    "description": "Terraform AWS provider",
+    "language": "Go",
+    "languageColor": "#00ADD8",
+    "stars": 3687,
+    "forks": 3375,
+    "currentPeriodStars": 8,
+    "builtBy": [
+      {
+        "username": "bflad",
+        "href": "https://github.com/bflad",
+        "avatar": "https://avatars0.githubusercontent.com/u/189114"
+      },
+      {
+        "username": "radeksimko",
+        "href": "https://github.com/radeksimko",
+        "avatar": "https://avatars3.githubusercontent.com/u/287584"
+      },
+      {
+        "username": "catsby",
+        "href": "https://github.com/catsby",
+        "avatar": "https://avatars2.githubusercontent.com/u/61721"
+      },
+      {
+        "username": "stack72",
+        "href": "https://github.com/stack72",
+        "avatar": "https://avatars3.githubusercontent.com/u/227823"
+      },
+      {
+        "username": "ryndaniels",
+        "href": "https://github.com/ryndaniels",
+        "avatar": "https://avatars1.githubusercontent.com/u/397565"
+      }
+    ]
+  },
+  {
+    "author": "Echowxsy",
+    "name": "CMPEDUDownload",
+    "avatar": "https://github.com/Echowxsy.png",
+    "url": "https://github.com/Echowxsy/CMPEDUDownload",
+    "description": "机械工业出版社PDF下载器",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "stars": 194,
+    "forks": 46,
+    "currentPeriodStars": 36,
+    "builtBy": [
+      {
+        "username": "Echowxsy",
+        "href": "https://github.com/Echowxsy",
+        "avatar": "https://avatars2.githubusercontent.com/u/12933379"
+      },
+      {
+        "username": "septs",
+        "href": "https://github.com/septs",
+        "avatar": "https://avatars3.githubusercontent.com/u/3842474"
+      }
+    ]
+  },
+  {
+    "author": "aws-amplify",
+    "name": "amplify-cli",
+    "avatar": "https://github.com/aws-amplify.png",
+    "url": "https://github.com/aws-amplify/amplify-cli",
+    "description": "A CLI toolchain for simplifying serverless web and mobile development.",
+    "language": "TypeScript",
+    "languageColor": "#2b7489",
+    "stars": 1330,
+    "forks": 263,
+    "currentPeriodStars": 5,
+    "builtBy": [
+      {
+        "username": "kaustavghosh06",
+        "href": "https://github.com/kaustavghosh06",
+        "avatar": "https://avatars1.githubusercontent.com/u/7247658"
+      },
+      {
+        "username": "UnleashedMind",
+        "href": "https://github.com/UnleashedMind",
+        "avatar": "https://avatars1.githubusercontent.com/u/6025263"
+      },
+      {
+        "username": "yut 2020-02-05 21:04:38.528 3186-3229/com.maxinemicu.gojekassignment D/OkHttp: h",
+        "href": "https://github.com/yuth",
+        "avatar": "https://avatars1.githubusercontent.com/u/511386"
+      },
+      {
+        "username": "SwaySway",
+        "href": "https://github.com/SwaySway",
+        "avatar": "https://avatars1.githubusercontent.com/u/7465495"
+      },
+      {
+        "username": "attilah",
+        "href": "https://github.com/attilah",
+        "avatar": "https://avatars2.githubusercontent.com/u/230432"
+      }
+    ]
+  },
+  {
+    "author": "teivah",
+    "name": "algodeck",
+    "avatar": "https://github.com/teivah.png",
+    "url": "https://github.com/teivah/algodeck",
+    "description": "An Open-Source Collection of +200 Algorithmic Flash Cards to Help you Preparing your Algorithm & Data Structure Interview 💯",
+    "stars": 2476,
+    "forks": 188,
+    "currentPeriodStars": 785,
+    "builtBy": [
+      {
+        "username": "teivah",
+        "href": "https://github.com/teivah",
+        "avatar": "https://avatars1.githubusercontent.com/u/934784"
+      },
+      {
+        "username": "briangordon",
+        "href": "https://github.com/briangordon",
+        "avatar": "https://avatars1.githubusercontent.com/u/1331024"
+      },
+      {
+        "username": "jcampbell1",
+        "href": "https://github.com/jcampbell1",
+        "avatar": "https://avatars2.githubusercontent.com/u/25371"
+      },
+      {
+        "username": "SeanPrashad",
+        "href": "https://github.com/SeanPrashad",
+        "avatar": "https://avatars1.githubusercontent.com/u/13009507"
+      }
+    ]
+  },
+  {
+    "author": "apple",
+    "name": "swift-crypto",
+    "avatar": "https://github.com/apple.png",
+    "url": "https://github.com/apple/swift-crypto",
+    "description": "Open-source implementation of a substantial portion of the API of Apple CryptoKit suitable for use on Linux platforms.",
+    "language": "Swift",
+    "languageColor": "#ffac45",
+    "stars": 532,
+    "forks": 16,
+    "currentPeriodStars": 208,
+    "builtBy": [
+      {
+        "username": "Lukasa",
+        "href": "https://github.com/Lukasa",
+        "avatar": "https://avatars0.githubusercontent.com/u/1382556"
+      },
+      {
+        "username": "Sajjon",
+        "href": "https://github.com/Sajjon",
+        "avatar": "https://avatars3.githubusercontent.com/u/864410"
+      },
+      {
+        "username": "tomerd",
+        "href": "https://github.com/tomerd",
+        "avatar": "https://avatars0.githubusercontent.com/u/147247"
+      },
+      {
+        "username": "AustinConlon",
+        "href": "https://github.com/AustinConlon",
+        "avatar": "https://avatars1.githubusercontent.com/u/1305957"
+      },
+      {
+        "username": "glbrntt",
+        "href": "https://github.com/glbrntt",
+        "avatar": "https://avatars0.githubusercontent.com/u/5047671"
+      }
+    ]
+  },
+  {
+    "author": "easychen",
+    "name": "howto-make-more-money",
+    "avatar": "https://github.com/easychen.png",
+    "url": "https://github.com/easychen/howto-make-more-money",
+    "description": "程序员如何优雅的挣零花钱",
+    "stars": 9146,
+    "forks": 986,
+    "currentPeriodStars": 137,
+    "builtBy": [
+      {
+        "username": "easychen",
+        "href": "https://github.com/easychen",
+        "avatar": "https://avatars2.githubusercontent.com/u/1294760"
+      },
+      {
+        "username": "AngelKitty",
+        "href": "https://github.com/AngelKitty",
+        "avatar": "https://avatars0.githubusercontent.com/u/30405643"
+      },
+      {
+        "username": "pcqpcq",
+        "href": "https://github.com/pcqpcq",
+        "avatar": "https://avatars0.githubusercontent.com/u/1411571"
+      },
+      {
+        "username": "NigelNN",
+        "href": "https://github.com/NigelNN",
+        "avatar": "https://avatars2.githubusercontent.com/u/43694725"
+      },
+      {
+        "username": "tvvocold",
+        "href": "https://github.com/tvvocold",
+        "avatar": "https://avatars0.githubusercontent.com/u/4530539"
+      }
+    ]
+  }
+]
