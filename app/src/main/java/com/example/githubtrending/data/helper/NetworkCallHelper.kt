@@ -10,7 +10,7 @@ object NetworkCallHelper {
 
     /**
      * Calls the passed function and returns [ResultStatus]
-     * Returns [ResultStatus.Success] if the call is succeeded
+     * Returns [ResultStatus.Success] if the call has succeeded
      * Returns [ResultStatus.Error] if an expected exception occurred.
      *
      */

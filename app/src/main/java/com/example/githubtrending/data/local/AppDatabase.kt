@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase
 import com.example.githubtrending.data.local.dao.GitTrendingDao
 import com.example.githubtrending.domain.model.GitTrendingModel
 
-@Database(entities = [GitTrendingModel::class], version = 1)
+@Database(entities = [GitTrendingModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getTrendingDao(): GitTrendingDao
 }

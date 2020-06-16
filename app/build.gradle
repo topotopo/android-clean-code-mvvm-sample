@@ -39,6 +39,10 @@ android {
         targetCompatibility = "8"
         sourceCompatibility = "8"
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -66,6 +70,10 @@ dependencies {
     //Dependency Injection
     implementation "com.google.dagger:hilt-android:2.28-alpha"
     kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
+
+    // When using Kotlin.
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
 
     //Retrofit / Okhttp
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -73,6 +81,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.7.2'
     implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.5'
 
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
@@ -88,4 +97,8 @@ dependencies {
 
     //Shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //ktx
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
 }

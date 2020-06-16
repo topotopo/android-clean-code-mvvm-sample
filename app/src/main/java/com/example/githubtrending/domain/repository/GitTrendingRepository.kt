@@ -5,5 +5,5 @@ import com.example.githubtrending.domain.model.GitTrendingModel
 
 interface GitTrendingRepository {
 
-    suspend fun fetchGitTrendingList(refresh: Boolean): List<GitTrendingModel>?
+    suspend fun fetchGitTrendingList(refresh: Boolean): List<GitTrendingModel>
 }
