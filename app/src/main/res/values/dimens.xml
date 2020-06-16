@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_xxxs">2dp</dimen>
+    <dimen name="space_xxs">4dp</dimen>
+    <dimen name="space_xs">6dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">16dp</dimen>
+    <dimen name="space_l">24dp</dimen>
+
+    <dimen name="font_size_title">21sp</dimen>
+    <dimen name="font_size_h1">18sp</dimen>
+    <dimen name="font_size_h2">15sp</dimen>
+    <dimen name="font_size_body_small">12sp</dimen>
+
+    <dimen name="avatar_size">32dp</dimen>
+    <dimen name="item_placeholder_vertical_margin">21dp</dimen>
+    <dimen name="item_horizontal_margin">36dp</dimen>
+    <dimen name="avatar_margin_end">16dp</dimen>
+    <dimen name="item_vertical_margin">16dp</dimen>
+
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <dimen name="username_placeholder">100dp</dimen>
+    <dimen name="text_placeholder_height">12dp</dimen>
+    <dimen name="item_margin">20dp</dimen>
+    <dimen name="toolbar_elevation">8dp</dimen>
+</resources>
