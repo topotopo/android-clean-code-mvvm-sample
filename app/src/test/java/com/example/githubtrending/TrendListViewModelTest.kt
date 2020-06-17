@@ -89,22 +89,4 @@ class TrendListViewModelTest {
         }
     }
 
-    @Test
-    fun `test set error state should set page state to error`() {
-        viewModel.setErrorState("")
-        Assert.assertTrue(viewModel.pageState.getTestValue() is PageState.Error)
-    }
-
-    @Test
-    fun `test set success state should set page state to success`() {
-        viewModel.setSuccessState()
-        Assert.assertTrue(viewModel.pageState.getTestValue() is PageState.Success)
-    }
-
-    @Test
-    fun `test set loading state should set page state to loading`() {
-        viewModel.setLoadingState()
-        Assert.assertTrue(viewModel.pageState.getTestValue() is PageState.Loading)
-    }
-
 }

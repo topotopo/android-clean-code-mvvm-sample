@@ -8,6 +8,7 @@ import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.usecase.GetTrendingListUseCase
 import com.example.githubtrending.presentation.TrendingItemHolder
 import com.example.githubtrending.presentation.common.PageState
+import com.example.githubtrending.presentation.common.PageStateHelper
 import com.mmicu.commonadapter.CommonItemHolder
 import kotlinx.coroutines.launch
 import java.lang.Error
@@ -16,12 +17,13 @@ class TrendListViewModel @ViewModelInject constructor(private val useCase: GetTr
     ViewModel() {
 
     val trendingRepoList = MutableLiveData<List<CommonItemHolder<*>>>()
-    var pageState = MutableLiveData<PageState>()
+    var pageStateHelper = PageStateHelper()
+    var pageState = pageStateHelper.pageState
 
     fun fetchTRendingList(refresh: Boolean) {
 
         viewModelScope.launch {
-            setLoadingState()
+            pageStateHelper.setLoadingState()
             when (val response = useCase.getTrendingList(refresh)) {
                 is ResultStatus.Success -> {
                     trendingRepoList.postValue(response.data?.map {
@@ -29,24 +31,12 @@ class TrendListViewModel @ViewModelInject constructor(private val useCase: GetTr
                             data = it
                         )
                     })
-                    setSuccessState()
+                    pageStateHelper.setSuccessState()
                 }
                 is ResultStatus.Error -> {
-                    setErrorState(response.exception?.message.toString())
+                    pageStateHelper.setErrorState(response.exception?.message.toString())
                 }
             }
         }
-    }
-
-    fun setErrorState(message: String) {
-        pageState.postValue(PageState.Error(message))
-    }
-
-    fun setLoadingState() {
-        pageState.postValue(PageState.Loading)
-    }
-
-    fun setSuccessState() {
-        pageState.postValue(PageState.Success)
     }
 }
