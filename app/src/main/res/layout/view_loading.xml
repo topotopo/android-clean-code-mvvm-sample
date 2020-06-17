@@ -10,16 +10,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/view_trending_loading" />
+        <include layout="@layout/view_list_loading" />
 
-        <include layout="@layout/view_trending_loading" />
+        <include layout="@layout/view_list_loading" />
 
-        <include layout="@layout/view_trending_loading" />
+        <include layout="@layout/view_list_loading" />
 
-        <include layout="@layout/view_trending_loading" />
+        <include layout="@layout/view_list_loading" />
 
-        <include layout="@layout/view_trending_loading" />
+        <include layout="@layout/view_list_loading" />
 
-        <include layout="@layout/view_trending_loading" />
+        <include layout="@layout/view_list_loading" />
     </LinearLayout>
 </com.facebook.shimmer.ShimmerFrameLayout>

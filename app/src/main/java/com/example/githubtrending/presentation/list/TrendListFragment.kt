@@ -1,4 +1,4 @@
-package com.example.githubtrending.presentation
+package com.example.githubtrending.presentation.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,9 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendListBinding
+import com.example.githubtrending.domain.model.GitTrendingModel
+import com.example.githubtrending.presentation.TrendListActivity
 import com.example.githubtrending.presentation.common.CommonAppAdapter
 import com.example.githubtrending.presentation.common.PageState
-import com.example.githubtrending.presentation.list.TrendListViewModel
 import com.mmicu.commonadapter.CommonItemHolder
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,8 +49,8 @@ class TrendListFragment : Fragment() {
         binding.rvTrending.layoutManager = LinearLayoutManager(context)
         binding.rvTrending.adapter = adapter
 
-        adapter.setItemClickListener { pos, data, view ->
-
+        adapter.setItemClickListener { _, data, _ ->
+            (activity as TrendListActivity).loadTrendDetailsFragment((data as GitTrendingModel).url)
         }
 
         binding.swipeRefresh.setOnRefreshListener {

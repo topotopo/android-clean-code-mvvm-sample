@@ -14,6 +14,9 @@ abstract class GitTrendingDao {
     @Query("SELECT * FROM GitTrendingModel")
     abstract suspend fun getAll(): List<GitTrendingModel>
 
+    @Query("SELECT * FROM GitTrendingModel WHERE url = :url")
+    abstract suspend fun get(url: String): GitTrendingModel?
+
     @Insert
     abstract suspend fun insertAll(repositoryModels: List<GitTrendingModel>)
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/item_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/item_horizontal_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/item_vertical_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/item_vertical_margin" />
+
+        <View
+            android:id="@+id/vewBox"
+            android:layout_width="@dimen/avatar_size_large"
+            android:layout_height="@dimen/avatar_size_large"
+            android:background="@color/colorCharcoalLight"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toTopOf="@id/guideTop" />
+
+        <View
+            android:id="@+id/viewText2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_margin"
+            android:layout_marginTop="@dimen/space_s"
+            android:background="@color/colorCharcoalLight"
+            app:layout_constraintBottom_toTopOf="@id/description"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/viewText1" />
+
+        <View
+            android:id="@+id/viewText1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_margin"
+            android:layout_marginTop="@dimen/space_s"
+            android:background="@color/colorCharcoalLight"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/vewBox" />
+
+        <View
+            android:id="@+id/viewText3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_margin"
+            android:layout_marginTop="@dimen/space_s"
+            android:background="@color/colorCharcoalLight"
+            android:textColor="@color/colorCharcoal"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/viewText2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

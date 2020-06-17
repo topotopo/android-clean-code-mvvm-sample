@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.githubtrending.domain.model.GitTrendingModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/loading"
+            layout="@layout/view_details_loading"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/item_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/item_horizontal_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/item_vertical_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/item_vertical_margin" />
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/avatar_size_large"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toTopOf="@id/guideTop"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_l"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="bottom"
+            android:maxLines="1"
+            android:text="@{data.name}"
+            android:textColor="@color/colorCharcoalDark"
+            android:textSize="@dimen/font_size_h2"
+            app:layout_constraintBottom_toTopOf="@id/description"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/author"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:fontFamily="sans-serif"
+            android:setTextAndVisibility="@{data.author}"
+            android:textAlignment="center"
+            android:textColor="@color/colorCharcoalDark"
+            android:textSize="@dimen/font_size_body_small"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/avatar"
+            tools:text="@tools:sample/last_names" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:maxLines="2"
+            android:text="@{data.description}"
+            android:textColor="@color/colorCharcoal"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Repo Description" />
+
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:fontFamily="sans-serif"
+            android:maxLines="1"
+            android:text="@{data.language}"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="@dimen/font_size_body_small"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@+id/guideStart"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            tools:text="Kotlin" />
+
+        <TextView
+            android:id="@+id/stars"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:fontFamily="sans-serif"
+            android:setTextAndVisibility="@{data.stars}"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="@dimen/font_size_body_small"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintStart_toStartOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/language"
+            tools:text="12,3456" />
+
+        <TextView
+            android:id="@+id/forks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_s"
+            android:fontFamily="sans-serif"
+            android:setTextAndVisibility="@{data.forks}"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="@dimen/font_size_body_small"
+            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+            app:layout_constraintStart_toEndOf="@id/guideStart"
+            app:layout_constraintTop_toBottomOf="@id/stars"
+            tools:text="6,543" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

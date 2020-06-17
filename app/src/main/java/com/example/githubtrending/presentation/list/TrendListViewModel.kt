@@ -13,11 +13,13 @@ import com.mmicu.commonadapter.CommonItemHolder
 import kotlinx.coroutines.launch
 import java.lang.Error
 
-class TrendListViewModel @ViewModelInject constructor(private val useCase: GetTrendingListUseCase) :
+class TrendListViewModel @ViewModelInject constructor(
+    private val useCase: GetTrendingListUseCase,
+    private val pageStateHelper: PageStateHelper
+) :
     ViewModel() {
 
     val trendingRepoList = MutableLiveData<List<CommonItemHolder<*>>>()
-    var pageStateHelper = PageStateHelper()
     var pageState = pageStateHelper.pageState
 
     fun fetchTRendingList(refresh: Boolean) {

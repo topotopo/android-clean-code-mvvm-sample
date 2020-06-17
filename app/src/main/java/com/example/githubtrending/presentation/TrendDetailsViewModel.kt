@@ -7,25 +7,28 @@ import androidx.lifecycle.viewModelScope
 import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.model.GitTrendingModel
 import com.example.githubtrending.domain.usecase.GetTrendingDetailsUseCase
-import com.example.githubtrending.presentation.common.PageState
+import com.example.githubtrending.presentation.common.PageStateHelper
 import kotlinx.coroutines.launch
 
-class TrendDetailsViewModel @ViewModelInject constructor(private val useCase: GetTrendingDetailsUseCase) :
+class TrendDetailsViewModel @ViewModelInject constructor(
+    private val useCase: GetTrendingDetailsUseCase,
+    private val pageStateHelper: PageStateHelper
+) :
     ViewModel() {
 
     val trendingModel = MutableLiveData<GitTrendingModel>()
-    var pageState = MutableLiveData<PageState>()
+    var pageState = pageStateHelper.pageState
 
     fun getTrendingDetails(url: String) {
         viewModelScope.launch {
-            pageState.postValue(PageState.Loading)
+            pageStateHelper.setLoadingState()
             when (val result = useCase.getTrendingDetails(url)) {
                 is ResultStatus.Success -> {
-                    pageState.postValue(PageState.Success)
+                    pageStateHelper.setSuccessState()
                     trendingModel.postValue(result.data)
                 }
                 is ResultStatus.Error -> {
-                    pageState.postValue(PageState.Error(result.exception?.message.toString()))
+                    pageStateHelper.setErrorState(result.exception?.message.toString())
                 }
 
             }
