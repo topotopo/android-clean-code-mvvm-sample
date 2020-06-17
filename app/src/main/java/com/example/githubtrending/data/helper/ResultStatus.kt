@@ -5,5 +5,5 @@ package com.example.githubtrending.data.helper
  */
 sealed class ResultStatus<out T : Any?> {
     data class Success<out T : Any?>(val data: T?) : ResultStatus<T>()
-    data class Error(val exception: Exception) : ResultStatus<Nothing>()
+    data class Error(val exception: Exception?) : ResultStatus<Nothing>()
 }

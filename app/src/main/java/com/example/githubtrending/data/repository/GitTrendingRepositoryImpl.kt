@@ -9,8 +9,7 @@ import javax.inject.Inject
 class GitTrendingRepositoryImpl @Inject constructor(
     private val trendingApi: GitTrendingApi,
     private val gitTrendingDao: GitTrendingDao
-) :
-    GitTrendingRepository {
+) : GitTrendingRepository {
 
     override suspend fun fetchGitTrendingList(refresh: Boolean): List<GitTrendingModel> {
         return if (refresh || gitTrendingDao.getAll().isEmpty()) {
@@ -22,4 +21,7 @@ class GitTrendingRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun getGitTrendingDetails(url: String): GitTrendingModel? {
+        return gitTrendingDao.get(url)
+    }
 }

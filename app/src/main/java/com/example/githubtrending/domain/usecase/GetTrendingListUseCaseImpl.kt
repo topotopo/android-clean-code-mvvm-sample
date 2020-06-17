@@ -13,7 +13,7 @@ class GetTrendingListUseCaseImpl @Inject constructor(private val gitTrendingRepo
     override suspend fun getTrendingList(refresh: Boolean): ResultStatus<List<GitTrendingModel>> {
 
         val response = safeApiCall {
-            gitTrendingRepo.fetchGitTrendingList(true)
+            gitTrendingRepo.fetchGitTrendingList(refresh)
         }
 
         return when (response) { //TODO: Pass refresh
