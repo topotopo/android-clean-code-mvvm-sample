@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.model.GitTrendingModel
 import com.example.githubtrending.domain.usecase.GetTrendingDetailsUseCase
-import com.example.githubtrending.presentation.common.PageStateHelper
+import com.example.githubtrending.presentation.util.PageStateHelper
 import kotlinx.coroutines.launch
 
 class TrendDetailsViewModel @ViewModelInject constructor(

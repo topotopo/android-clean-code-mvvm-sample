@@ -1,4 +1,4 @@
-package com.example.githubtrending.presentation.common
+package com.example.githubtrending.presentation.util
 
 sealed class PageState {
     object Loading : PageState()

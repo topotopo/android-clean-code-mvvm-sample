@@ -1,12 +1,10 @@
 package com.example.githubtrending.di
 
 import android.content.Context
-import androidx.room.PrimaryKey
 import androidx.room.Room
 import com.example.githubtrending.data.local.AppDatabase
 import com.example.githubtrending.data.local.dao.GitTrendingDao
-import com.example.githubtrending.presentation.common.PageState
-import com.example.githubtrending.presentation.common.PageStateHelper
+import com.example.githubtrending.presentation.util.PageStateHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

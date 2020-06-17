@@ -1,17 +1,12 @@
 package com.example.githubtrending
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.githubtrending.helper.getTestValue
-import com.example.githubtrending.presentation.common.PageState
-import com.example.githubtrending.presentation.common.PageStateHelper
+import com.example.githubtrending.presentation.util.PageState
+import com.example.githubtrending.presentation.util.PageStateHelper
 import org.junit.Assert
-import org.junit.Rule
 import org.junit.Test
 
-class PageStateHelperTest {
-
-    @get:Rule
-    val instantTaskExecutorRule = InstantTaskExecutorRule()
+class PageStateHelperTest : BaseTest() {
 
     var pageStateHelper = PageStateHelper()
 

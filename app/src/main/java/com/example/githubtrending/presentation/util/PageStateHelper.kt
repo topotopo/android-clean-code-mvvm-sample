@@ -1,4 +1,4 @@
-package com.example.githubtrending.presentation.common
+package com.example.githubtrending.presentation.util
 
 import androidx.lifecycle.MutableLiveData
 
@@ -7,7 +7,11 @@ class PageStateHelper {
     var pageState = MutableLiveData<PageState>()
 
     fun setErrorState(message: String) {
-        pageState.postValue(PageState.Error(message))
+        pageState.postValue(
+            PageState.Error(
+                message
+            )
+        )
     }
 
     fun setLoadingState() {

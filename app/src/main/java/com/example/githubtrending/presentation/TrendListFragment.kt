@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendListBinding
 import com.example.githubtrending.presentation.common.CommonAppAdapter
-import com.example.githubtrending.presentation.common.PageState
+import com.example.githubtrending.presentation.util.PageState
 import com.example.githubtrending.presentation.list.TrendListViewModel
 import com.mmicu.commonadapter.CommonItemHolder
 import dagger.hilt.android.AndroidEntryPoint

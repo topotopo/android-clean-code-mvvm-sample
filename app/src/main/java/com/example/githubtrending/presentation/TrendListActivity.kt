@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.ActivityTrendListBinding
-import com.example.githubtrending.presentation.common.GIT_MODEL_URL
+import com.example.githubtrending.presentation.util.GIT_MODEL_URL
 import com.example.githubtrending.presentation.list.TrendListFragment
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings

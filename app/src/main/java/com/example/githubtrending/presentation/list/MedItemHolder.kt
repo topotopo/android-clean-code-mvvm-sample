@@ -1,4 +1,4 @@
-package com.example.githubtrending.presentation
+package com.example.githubtrending.presentation.list
 
 import android.view.View
 import com.example.githubtrending.BR

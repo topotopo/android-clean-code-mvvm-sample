@@ -10,8 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendDetailsBinding
-import com.example.githubtrending.presentation.common.GIT_MODEL_URL
-import com.example.githubtrending.presentation.common.PageState
+import com.example.githubtrending.presentation.util.GIT_MODEL_URL
+import com.example.githubtrending.presentation.util.PageState
 import com.example.githubtrending.presentation.util.loadCircularAvatar
 import dagger.hilt.android.AndroidEntryPoint
 
