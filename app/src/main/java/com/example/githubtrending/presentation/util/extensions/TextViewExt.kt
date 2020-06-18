@@ -41,7 +41,9 @@ fun TextView.setLanguageIcon(colorHex: String, padding: Int) {
  * @param padding the spacing between the set
  * @param size the size of the drawable
  */
-fun TextView.addDrawableStartWithCustomSize(icon: Drawable, padding: Int, size: Int) {
+fun TextView.addDrawableStartWithCustomSize(icon: Drawable?, padding: Int, size: Int) {
+    if (icon == null) return
+
     icon.setBounds(0, 0, size, size)
     this.setCompoundDrawables(
         icon,

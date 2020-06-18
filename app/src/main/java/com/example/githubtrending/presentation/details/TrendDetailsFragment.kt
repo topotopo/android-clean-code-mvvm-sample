@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -12,7 +13,10 @@ import com.example.githubtrending.databinding.FragmentTrendDetailsBinding
 import com.example.githubtrending.presentation.common.BaseFragment
 import com.example.githubtrending.presentation.util.GIT_MODEL_URL
 import com.example.githubtrending.presentation.util.PageState
+import com.example.githubtrending.presentation.util.extensions.addDrawableStartWithCustomSize
+import com.example.githubtrending.presentation.util.extensions.convertDpToInt
 import com.example.githubtrending.presentation.util.extensions.loadCircularAvatar
+import com.example.githubtrending.presentation.util.extensions.setLanguageIcon
 
 class TrendDetailsFragment : BaseFragment() {
 
@@ -48,8 +52,23 @@ class TrendDetailsFragment : BaseFragment() {
     private fun initializeObservers() {
         detailsViewModel.trendingModel.observe(viewLifecycleOwner, Observer { gitTrendingModel ->
             binding.data = gitTrendingModel
-            gitTrendingModel.avatar?.let {
-                loadAvatar(it)
+            gitTrendingModel.languageColor?.let {
+                binding.language.setLanguageIcon(it, 4f.convertDpToInt(context))
+            }
+            context?.let { context ->
+                val star = ContextCompat.getDrawable(context, R.drawable.ic_star)
+                val copy = ContextCompat.getDrawable(context, R.drawable.ic_copy)
+                binding.stars.addDrawableStartWithCustomSize(
+                    star, 4f.convertDpToInt(context),
+                    16f.convertDpToInt(context)
+                )
+                binding.forks.addDrawableStartWithCustomSize(
+                    copy, 4f.convertDpToInt(context),
+                    16f.convertDpToInt(context)
+                )
+                gitTrendingModel.avatar?.let {
+                    loadAvatar(it)
+                }
             }
         })
 

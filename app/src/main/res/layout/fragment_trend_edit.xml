@@ -125,6 +125,10 @@
             app:layout_constraintBottom_toBottomOf="@id/nameLabel"
             app:layout_constraintEnd_toEndOf="@id/guideEnd"
             app:layout_constraintHorizontal_weight="6"
+            android:inputType="text"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:nextFocusDown="@id/descriptionForm"
             app:layout_constraintStart_toEndOf="@id/nameLabel"
             app:layout_constraintTop_toTopOf="@id/nameLabel" />
 
@@ -136,6 +140,8 @@
             app:layout_constraintBottom_toBottomOf="@id/descriptionLabel"
             app:layout_constraintEnd_toEndOf="@id/guideEnd"
             app:layout_constraintHorizontal_weight="6"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
             app:layout_constraintStart_toEndOf="@id/descriptionLabel"
             app:layout_constraintTop_toTopOf="@id/descriptionLabel" />
     </androidx.constraintlayout.widget.ConstraintLayout>

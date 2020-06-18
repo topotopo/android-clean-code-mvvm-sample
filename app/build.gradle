@@ -43,6 +43,10 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 dependencies {
@@ -60,7 +64,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation "androidx.cardview:cardview:$cardview_version"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
-
     implementation 'com.mmicu.commonadapter:commonadapter:1.0.1-snapshot01'
 
     //Glide
@@ -117,4 +120,10 @@ dependencies {
     androidTestImplementation 'org.mockito:mockito-android:2.24.5'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test:rules:1.2.0'
+
+    def appcompat_version = "1.1.0"
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    // For loading and tinting drawables on older versions of the platform
+    implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
 }

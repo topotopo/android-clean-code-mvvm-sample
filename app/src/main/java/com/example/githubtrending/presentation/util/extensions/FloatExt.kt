@@ -7,6 +7,8 @@ package com.example.githubtrending.presentation.util.extensions
 
 import android.content.Context
 
-fun Float.convertDpToInt(context: Context): Int {
-    return (this * context.resources.displayMetrics.density).toInt()
+fun Float.convertDpToInt(context: Context?): Int {
+    return context?.let {
+        (this * context.resources.displayMetrics.density).toInt()
+    } ?: 0
 }
