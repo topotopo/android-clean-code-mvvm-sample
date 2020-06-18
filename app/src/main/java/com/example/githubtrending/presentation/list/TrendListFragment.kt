@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendListBinding
 import com.example.githubtrending.domain.model.GitTrendingModel
-import com.example.githubtrending.presentation.ErrorDialog
 import com.example.githubtrending.presentation.common.BaseFragment
 import com.example.githubtrending.presentation.common.CommonAppAdapter
 import com.example.githubtrending.presentation.util.PageState

@@ -4,9 +4,12 @@ import android.content.Context
 import java.io.InputStream
 import java.util.*
 
-class FakeJsonFileReader {
+/**
+ * Reads file from raw class and returns it to a string.
+ */
+class RawFileReader {
 
-    fun readMockJson(context: Context, mockFileId: Int): String {
+    fun readRawFile(context: Context, mockFileId: Int): String {
         val stream: InputStream? = context.resources.openRawResource(mockFileId)
         return streamToString(stream!!)
     }

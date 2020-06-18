@@ -94,7 +94,6 @@ class TrendEditFragment : BaseFragment() {
             this?.description = description
         }
 
-        Log.v("MXN", "git trending model -> ${newGitTrendingModel}")
         newGitTrendingModel?.let {
             editViewModel.updateTrendingDetails(url, it)
         }

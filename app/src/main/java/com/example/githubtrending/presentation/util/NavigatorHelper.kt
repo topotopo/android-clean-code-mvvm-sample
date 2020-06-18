@@ -1,6 +1,5 @@
 package com.example.githubtrending.presentation.util
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -9,6 +8,9 @@ import com.example.githubtrending.presentation.details.TrendDetailsFragment
 import com.example.githubtrending.presentation.edit.TrendEditFragment
 import com.example.githubtrending.presentation.list.TrendListFragment
 
+/**
+ * Navigates to the activity / fragments within the app.
+ */
 class NavigatorHelper {
 
     fun loadTrendListFragment(supportFragmentManager: FragmentManager) {

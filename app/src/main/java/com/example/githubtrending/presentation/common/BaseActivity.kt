@@ -6,6 +6,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 import javax.inject.Inject
 
+
 @AndroidEntryPoint
 @WithFragmentBindings
 open class BaseActivity : AppCompatActivity() {

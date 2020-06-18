@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.usecase.GetTrendingListUseCase
-import com.example.githubtrending.presentation.ErrorDialog
 import com.example.githubtrending.presentation.util.PageStateHelper
 import com.mmicu.commonadapter.CommonItemHolder
 import kotlinx.coroutines.launch

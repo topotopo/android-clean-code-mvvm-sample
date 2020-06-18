@@ -2,6 +2,9 @@ package com.example.githubtrending.presentation.util
 
 import androidx.lifecycle.MutableLiveData
 
+/**
+ * Updates the different state of the PageState in a LiveData
+ */
 class PageStateHelper {
 
     var pageState = MutableLiveData<PageState>()
