@@ -6,18 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendEditBinding
+import com.example.githubtrending.presentation.common.BaseFragment
 import com.example.githubtrending.presentation.util.GIT_MODEL_URL
 import com.example.githubtrending.presentation.util.PageState
-import com.example.githubtrending.presentation.util.loadCircularAvatar
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.githubtrending.presentation.util.extensions.loadCircularAvatar
 
-@AndroidEntryPoint
-class TrendEditFragment : Fragment() {
+class TrendEditFragment : BaseFragment() {
 
     private val editViewModel: TrendEditViewModel by viewModels()
     lateinit var binding: FragmentTrendEditBinding
@@ -57,6 +55,7 @@ class TrendEditFragment : Fragment() {
                 }
                 is PageState.Error -> {
                     binding.loading.visibility = View.GONE
+                    showErrorDialog()
                 }
                 is PageState.Loading -> {
                     binding.loading.visibility = View.VISIBLE
@@ -68,6 +67,7 @@ class TrendEditFragment : Fragment() {
     private fun initializeUi() {
         binding.save.setOnClickListener {
             saveTrendingModel(url)
+            parentFragmentManager.popBackStack()
         }
     }
 

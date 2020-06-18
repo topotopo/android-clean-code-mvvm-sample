@@ -5,27 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendListBinding
 import com.example.githubtrending.domain.model.GitTrendingModel
-import com.example.githubtrending.presentation.GitTrendingActivity
+import com.example.githubtrending.presentation.ErrorDialog
+import com.example.githubtrending.presentation.common.BaseFragment
 import com.example.githubtrending.presentation.common.CommonAppAdapter
 import com.example.githubtrending.presentation.util.PageState
 import com.mmicu.commonadapter.CommonItemHolder
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class TrendListFragment : Fragment() {
+class TrendListFragment : BaseFragment() {
 
     private lateinit var binding: FragmentTrendListBinding
 
     private val listViewModel: TrendListViewModel by viewModels()
-    lateinit var adapter: CommonAppAdapter
-    var items = mutableListOf<CommonItemHolder<*>>()
+    private lateinit var adapter: CommonAppAdapter
+    private var items = mutableListOf<CommonItemHolder<*>>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +48,10 @@ class TrendListFragment : Fragment() {
         binding.rvTrending.adapter = adapter
 
         adapter.setItemClickListener { _, data, _ ->
-            (activity as GitTrendingActivity).loadTrendDetailsFragment((data as GitTrendingModel).url)
+            navigation.loadTrendDetailsFragment(
+                (data as GitTrendingModel).url,
+                parentFragmentManager
+            )
         }
 
         binding.swipeRefresh.setOnRefreshListener {
@@ -70,21 +71,37 @@ class TrendListFragment : Fragment() {
         listViewModel.pageState.observe(viewLifecycleOwner, Observer { pageState ->
             when (pageState) {
                 is PageState.Loading -> {
-                    binding.loading.visibility = View.VISIBLE
-                    binding.rvTrending.visibility = View.GONE
+                    setViewToLoading()
                 }
                 is PageState.Success -> {
-                    binding.swipeRefresh.isRefreshing = false
-                    binding.loading.visibility = View.GONE
-                    binding.rvTrending.visibility = View.VISIBLE
+                    setViewToSuccess()
                 }
                 is PageState.Error -> {
-                    binding.swipeRefresh.isRefreshing = false
-                    binding.loading.visibility = View.GONE
-                    binding.rvTrending.visibility = View.VISIBLE
+                    setViewToError()
                 }
             }
 
         })
+    }
+
+    private fun setViewToError() {
+        binding.swipeRefresh.isRefreshing = false
+        binding.loading.visibility = View.VISIBLE
+        binding.rvTrending.visibility = View.VISIBLE
+        binding.errorView.visibility = View.VISIBLE
+        showErrorDialog()
+    }
+
+    private fun setViewToSuccess() {
+        binding.swipeRefresh.isRefreshing = false
+        binding.loading.visibility = View.GONE
+        binding.rvTrending.visibility = View.VISIBLE
+        binding.loading.visibility = View.GONE
+    }
+
+    private fun setViewToLoading() {
+        binding.loading.visibility = View.VISIBLE
+        binding.rvTrending.visibility = View.GONE
+        binding.loading.visibility = View.GONE
     }
 }

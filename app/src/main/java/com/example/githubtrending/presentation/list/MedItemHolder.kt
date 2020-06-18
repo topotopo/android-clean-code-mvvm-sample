@@ -4,9 +4,9 @@ import android.view.View
 import com.example.githubtrending.BR
 import com.example.githubtrending.R
 import com.example.githubtrending.domain.model.GitTrendingModel
-import com.example.githubtrending.presentation.util.convertDpToInt
-import com.example.githubtrending.presentation.util.loadCircularAvatar
-import com.example.githubtrending.presentation.util.setLanguageIcon
+import com.example.githubtrending.presentation.util.extensions.convertDpToInt
+import com.example.githubtrending.presentation.util.extensions.loadCircularAvatar
+import com.example.githubtrending.presentation.util.extensions.setLanguageIcon
 import com.mmicu.commonadapter.CommonItemHolder
 import kotlinx.android.synthetic.main.item_trend_list.view.*
 

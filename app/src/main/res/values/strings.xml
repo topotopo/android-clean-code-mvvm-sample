@@ -2,8 +2,9 @@
     <string name="app_name">GitHubTrending</string>
     <string name="titleTrending">Git Trending</string>
     <string name="errorTitle">Woops. Something went wrong.</string>
-    <string name="errorDescription">Please check your connection.</string>
+    <string name="errorDescription">Swipe to refresh.</string>
     <string name="retry">Retry</string>
+    <string name="okay">OK</string>
     <string name="descriptionLabel">Description</string>
     <string name="name">Name</string>
     <string name="edit_entry">Edit</string>

@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package com.example.githubtrending.presentation.util
+package com.example.githubtrending.presentation.util.extensions
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.githubtrending.data.local.AppDatabase
 import com.example.githubtrending.data.local.dao.GitTrendingDao
+import com.example.githubtrending.presentation.util.NavigatorHelper
 import com.example.githubtrending.presentation.util.PageStateHelper
 import dagger.Module
 import dagger.Provides
@@ -31,5 +32,10 @@ class AppModule {
     @Provides
     fun providePageStateHelper() : PageStateHelper {
         return PageStateHelper()
+    }
+
+    @Provides
+    fun provideNavigation() : NavigatorHelper {
+        return NavigatorHelper()
     }
 }

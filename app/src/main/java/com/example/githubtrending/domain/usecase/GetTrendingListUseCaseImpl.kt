@@ -15,8 +15,7 @@ class GetTrendingListUseCaseImpl @Inject constructor(private val gitTrendingRepo
         val response = safeApiCall {
             gitTrendingRepo.fetchGitTrendingList(refresh)
         }
-
-        return when (response) { //TODO: Pass refresh
+        return when (response) {
             is ResultStatus.Success -> {
                 ResultStatus.Success(response.data)
             }
