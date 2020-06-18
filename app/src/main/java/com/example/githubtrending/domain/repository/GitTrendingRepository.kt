@@ -7,4 +7,6 @@ interface GitTrendingRepository {
     suspend fun fetchGitTrendingList(refresh: Boolean): List<GitTrendingModel>
 
     suspend fun getGitTrendingDetails(url: String) : GitTrendingModel?
+
+    suspend fun updateTrendingDetails(url: String, gitTrendingModel: GitTrendingModel) : GitTrendingModel?
 }

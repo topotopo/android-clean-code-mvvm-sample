@@ -58,22 +58,19 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/nameLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_l"
-            android:fontFamily="sans-serif-medium"
             android:gravity="bottom"
             android:maxLines="1"
-            android:text="@{data.name}"
+            android:text="@string/name"
             android:textColor="@color/colorCharcoalDark"
             android:textSize="@dimen/font_size_h2"
-            app:layout_constraintBottom_toTopOf="@id/description"
-            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@id/descriptionLabel"
+            app:layout_constraintEnd_toStartOf="@+id/nameForm"
+            app:layout_constraintHorizontal_weight="3"
             app:layout_constraintStart_toStartOf="@+id/guideStart"
-            app:layout_constraintTop_toBottomOf="@+id/edit"
-            tools:text="@tools:sample/full_names" />
+            app:layout_constraintTop_toBottomOf="@+id/save" />
 
         <TextView
             android:id="@+id/author"
@@ -90,77 +87,56 @@
             app:layout_constraintTop_toBottomOf="@+id/avatar"
             tools:text="@tools:sample/last_names" />
 
-        <TextView
-            android:id="@+id/edit"
+        <Button
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:elevation="0dp"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:minWidth="@dimen/btn_min_width"
             android:padding="@dimen/space_s"
-            android:text="@string/edit_entry"
+            android:text="@string/save"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/guideEnd"
             app:layout_constraintStart_toStartOf="@id/guideStart"
             app:layout_constraintTop_toBottomOf="@id/author" />
 
-
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/descriptionLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_s"
-            android:maxLines="2"
-            android:text="@{data.description}"
-            android:textColor="@color/colorCharcoal"
-            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
-            app:layout_constraintStart_toStartOf="@+id/guideStart"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            tools:text="Repo Description" />
-
-        <TextView
-            android:id="@+id/language"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_s"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="@dimen/space_l"
             android:maxLines="1"
-            android:text="@{data.language}"
+            android:text="@string/descriptionLabel"
             android:textColor="@color/colorCharcoal"
-            android:textSize="@dimen/font_size_body_small"
-            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintEnd_toStartOf="@+id/descriptionForm"
+            app:layout_constraintHorizontal_weight="3"
             app:layout_constraintStart_toStartOf="@+id/guideStart"
-            app:layout_constraintTop_toBottomOf="@+id/description"
-            tools:text="Kotlin" />
+            app:layout_constraintTop_toBottomOf="@id/nameForm" />
 
-        <TextView
-            android:id="@+id/stars"
+
+        <EditText
+            android:id="@+id/nameForm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_s"
-            android:fontFamily="sans-serif"
-            android:setTextAndVisibility="@{data.stars}"
-            android:textColor="@color/colorCharcoal"
-            android:textSize="@dimen/font_size_body_small"
+            android:hint="@{data.name}"
+            app:layout_constraintBottom_toBottomOf="@id/nameLabel"
             app:layout_constraintEnd_toEndOf="@id/guideEnd"
-            app:layout_constraintStart_toStartOf="@id/guideStart"
-            app:layout_constraintTop_toBottomOf="@id/language"
-            tools:text="12,3456" />
+            app:layout_constraintHorizontal_weight="6"
+            app:layout_constraintStart_toEndOf="@id/nameLabel"
+            app:layout_constraintTop_toTopOf="@id/nameLabel" />
 
-        <TextView
-            android:id="@+id/forks"
+        <EditText
+            android:id="@+id/descriptionForm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_s"
-            android:fontFamily="sans-serif"
-            android:setTextAndVisibility="@{data.forks}"
-            android:textColor="@color/colorCharcoal"
-            android:textSize="@dimen/font_size_body_small"
-            app:layout_constraintEnd_toStartOf="@+id/guideEnd"
-            app:layout_constraintStart_toEndOf="@id/guideStart"
-            app:layout_constraintTop_toBottomOf="@id/stars"
-            tools:text="6,543" />
-
+            android:hint="@{data.description}"
+            app:layout_constraintBottom_toBottomOf="@id/descriptionLabel"
+            app:layout_constraintEnd_toEndOf="@id/guideEnd"
+            app:layout_constraintHorizontal_weight="6"
+            app:layout_constraintStart_toEndOf="@id/descriptionLabel"
+            app:layout_constraintTop_toTopOf="@id/descriptionLabel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

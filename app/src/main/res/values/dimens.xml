@@ -25,4 +25,5 @@
     <dimen name="text_placeholder_height">12dp</dimen>
     <dimen name="item_margin">20dp</dimen>
     <dimen name="toolbar_elevation">8dp</dimen>
+    <dimen name="btn_min_width">60dp</dimen>
 </resources>

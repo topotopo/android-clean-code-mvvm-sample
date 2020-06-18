@@ -12,7 +12,7 @@
         android:name=".GitTrendingApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.TrendListActivity">
+        <activity android:name=".presentation.GitTrendingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

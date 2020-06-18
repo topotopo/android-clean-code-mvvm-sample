@@ -2,10 +2,7 @@ package com.example.githubtrending.di
 
 import com.example.githubtrending.data.repository.GitTrendingRepositoryImpl
 import com.example.githubtrending.domain.repository.GitTrendingRepository
-import com.example.githubtrending.domain.usecase.GetTrendingDetailsUseCase
-import com.example.githubtrending.domain.usecase.GetTrendingDetailsUseCaseImpl
-import com.example.githubtrending.domain.usecase.GetTrendingListUseCase
-import com.example.githubtrending.domain.usecase.GetTrendingListUseCaseImpl
+import com.example.githubtrending.domain.usecase.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -19,6 +16,9 @@ abstract class UseCaseModule {
 
     @Binds
     abstract fun getTrendingDetailsUseCase(getTrendingDetailsUseCase: GetTrendingDetailsUseCaseImpl): GetTrendingDetailsUseCase
+
+    @Binds
+    abstract fun updateTrendingDetailsUseCase(updateTrendingDetailUseCase: UpdateTrendingDetailUseCaseImpl) : UpdateTrendingDetailUseCase
 
     @Binds
     abstract fun getTrendingRepository(getTrendingRepository: GitTrendingRepositoryImpl): GitTrendingRepository

@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideTop" />
 
         <View
-            android:id="@+id/name"
+            android:id="@+id/nameLabel"
             android:layout_width="0dp"
             android:layout_height="@dimen/text_placeholder_height"
             android:layout_marginStart="@dimen/space_m"

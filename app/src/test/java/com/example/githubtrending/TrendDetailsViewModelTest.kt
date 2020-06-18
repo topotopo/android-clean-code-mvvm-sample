@@ -4,13 +4,11 @@ import com.example.githubtrending.data.api.GitTrendingApi
 import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.model.GitTrendingModel
 import com.example.githubtrending.domain.usecase.GetTrendingDetailsUseCase
-import com.example.githubtrending.domain.usecase.GetTrendingListUseCase
 import com.example.githubtrending.helper.CoroutineTestRule
 import com.example.githubtrending.helper.getTestValue
-import com.example.githubtrending.presentation.TrendDetailsViewModel
+import com.example.githubtrending.presentation.details.TrendDetailsViewModel
 import com.example.githubtrending.presentation.util.PageState
 import com.example.githubtrending.presentation.util.PageStateHelper
-import com.mmicu.commonadapter.CommonItemHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert
@@ -40,7 +38,11 @@ class TrendDetailsViewModelTest : BaseTest() {
 
     @Before
     fun setUp() {
-        viewModel = TrendDetailsViewModel(useCase, PageStateHelper())
+        viewModel =
+            TrendDetailsViewModel(
+                useCase,
+                PageStateHelper()
+            )
     }
 
     @ExperimentalCoroutinesApi

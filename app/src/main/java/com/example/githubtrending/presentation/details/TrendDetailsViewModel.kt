@@ -1,4 +1,4 @@
-package com.example.githubtrending.presentation
+package com.example.githubtrending.presentation.details
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData

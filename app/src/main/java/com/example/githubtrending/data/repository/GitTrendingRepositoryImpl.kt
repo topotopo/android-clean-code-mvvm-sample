@@ -24,4 +24,14 @@ class GitTrendingRepositoryImpl @Inject constructor(
     override suspend fun getGitTrendingDetails(url: String): GitTrendingModel? {
         return gitTrendingDao.get(url)
     }
+
+    override suspend fun updateTrendingDetails(
+        url: String,
+        gitTrendingModel: GitTrendingModel
+    ): GitTrendingModel? {
+        return gitTrendingModel?.let {
+            gitTrendingDao.update(gitTrendingModel)
+            gitTrendingModel
+        }
+    }
 }

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubtrending.R
 import com.example.githubtrending.databinding.FragmentTrendListBinding
 import com.example.githubtrending.domain.model.GitTrendingModel
-import com.example.githubtrending.presentation.TrendListActivity
+import com.example.githubtrending.presentation.GitTrendingActivity
 import com.example.githubtrending.presentation.common.CommonAppAdapter
 import com.example.githubtrending.presentation.util.PageState
 import com.mmicu.commonadapter.CommonItemHolder
@@ -50,14 +50,14 @@ class TrendListFragment : Fragment() {
         binding.rvTrending.adapter = adapter
 
         adapter.setItemClickListener { _, data, _ ->
-            (activity as TrendListActivity).loadTrendDetailsFragment((data as GitTrendingModel).url)
+            (activity as GitTrendingActivity).loadTrendDetailsFragment((data as GitTrendingModel).url)
         }
 
         binding.swipeRefresh.setOnRefreshListener {
             listViewModel.fetchTRendingList(true)
         }
 
-        listViewModel.fetchTRendingList(true)
+        listViewModel.fetchTRendingList(false)
     }
 
     private fun initializeObservers() {
