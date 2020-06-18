@@ -39,7 +39,8 @@ class TrendEditViewModel @ViewModelInject constructor(
     fun updateTrendingDetails(url: String, gitTrendingModel: GitTrendingModel) {
         viewModelScope.launch {
             pageStateHelper.setLoadingState()
-            when(val result = updateTrendingDetailsUseCase.updateTrendingDetailsUseCase(url, gitTrendingModel)) {
+            val result = updateTrendingDetailsUseCase.updateTrendingDetailsUseCase(url, gitTrendingModel)
+            when(result) {
                 is ResultStatus.Success -> {
                     pageStateHelper.setSuccessState()
                     trendingModel.postValue(result.data)

@@ -1,10 +1,8 @@
 package com.example.githubtrending
 
-import com.example.githubtrending.data.api.GitTrendingApi
 import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.model.GitTrendingModel
 import com.example.githubtrending.domain.usecase.GetTrendingListUseCase
-import com.example.githubtrending.helper.CoroutineTestRule
 import com.example.githubtrending.helper.getTestValue
 import com.example.githubtrending.presentation.list.TrendListViewModel
 import com.example.githubtrending.presentation.util.PageState
@@ -12,7 +10,9 @@ import com.example.githubtrending.presentation.util.PageStateHelper
 import com.mmicu.commonadapter.CommonItemHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.*
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 import java.io.IOException
@@ -20,13 +20,6 @@ import java.io.IOException
 class TrendListViewModelTest : BaseTest() {
 
     private lateinit var viewModel: TrendListViewModel
-
-    @ExperimentalCoroutinesApi
-    @get:Rule
-    var coroutineTestRule = CoroutineTestRule()
-
-    @Mock
-    lateinit var gitTrendApi: GitTrendingApi
 
     @Mock
     lateinit var gitTrendingModel: GitTrendingModel
@@ -46,9 +39,6 @@ class TrendListViewModelTest : BaseTest() {
 
         coroutineTestRule.testDispatcher.runBlockingTest {
             Mockito.`when`(useCase.getTrendingList(true)).thenReturn(repositorySuccessResult)
-            Mockito.`when`(gitTrendApi.fetchTrendingRepos())
-                .thenReturn(listOf())
-
             viewModel.fetchTRendingList(true)
         }
         Assert.assertTrue(viewModel.trendingRepoList.getTestValue() is List<CommonItemHolder<*>>)
@@ -62,8 +52,6 @@ class TrendListViewModelTest : BaseTest() {
         val repositoryErrorResult = ResultStatus.Error(IOException())
         coroutineTestRule.testDispatcher.runBlockingTest {
             Mockito.`when`(useCase.getTrendingList(true)).thenReturn(repositoryErrorResult)
-            Mockito.`when`(gitTrendApi.fetchTrendingRepos())
-                .thenReturn(listOf())
             viewModel.fetchTRendingList(true)
         }
         Assert.assertTrue(viewModel.pageState.getTestValue() is PageState.Error)

@@ -3,8 +3,9 @@ package com.example.githubtrending
 import com.example.githubtrending.data.helper.ResultStatus
 import com.example.githubtrending.domain.model.GitTrendingModel
 import com.example.githubtrending.domain.usecase.GetTrendingDetailsUseCase
+import com.example.githubtrending.domain.usecase.UpdateTrendingDetailUseCase
 import com.example.githubtrending.helper.getTestValue
-import com.example.githubtrending.presentation.details.TrendDetailsViewModel
+import com.example.githubtrending.presentation.edit.TrendEditViewModel
 import com.example.githubtrending.presentation.util.PageState
 import com.example.githubtrending.presentation.util.PageStateHelper
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -14,23 +15,26 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import java.io.IOException
 
-class TrendDetailsViewModelTest : BaseTest() {
+class TrendEditViewModelTest : BaseTest() {
 
-    private lateinit var viewModel: TrendDetailsViewModel
+    private lateinit var viewModel: TrendEditViewModel
 
     @Mock
     lateinit var gitTrendingModel: GitTrendingModel
 
     @Mock
-    lateinit var useCase: GetTrendingDetailsUseCase
+    lateinit var getUseCase: GetTrendingDetailsUseCase
+
+    @Mock
+    lateinit var updateUseCase: UpdateTrendingDetailUseCase
 
     @Before
     fun setUp() {
         viewModel =
-            TrendDetailsViewModel(
-                useCase,
+            TrendEditViewModel(
+                getUseCase,
+                updateUseCase,
                 PageStateHelper()
             )
     }
@@ -40,7 +44,7 @@ class TrendDetailsViewModelTest : BaseTest() {
     fun `test fetch git trending details successfully should return a data and set page to success`() {
         val repositorySuccessResult = ResultStatus.Success(gitTrendingModel)
         coroutineTestRule.testDispatcher.runBlockingTest {
-            Mockito.`when`(useCase.getTrendingDetails("")).thenReturn(repositorySuccessResult)
+            Mockito.`when`(getUseCase.getTrendingDetails("")).thenReturn(repositorySuccessResult)
             viewModel.getTrendingDetails("")
         }
         Assert.assertTrue(viewModel.trendingModel.getTestValue() is GitTrendingModel)
@@ -49,12 +53,18 @@ class TrendDetailsViewModelTest : BaseTest() {
 
     @ExperimentalCoroutinesApi
     @Test
-    fun `test fetch trending list failed should set page state to error`() {
-        val repositoryErrorResult = ResultStatus.Error(IOException())
+    fun `test update git trending details successfully should return an updated data and set page to success`() {
+        val updatedGitModel =
+            GitTrendingModel("url1", "", "new_name", "", "new_description", "", "", "", "", "")
+
+        val repositorySuccessResult = ResultStatus.Success(updatedGitModel)
         coroutineTestRule.testDispatcher.runBlockingTest {
-            Mockito.`when`(useCase.getTrendingDetails("")).thenReturn(repositoryErrorResult)
-            viewModel.getTrendingDetails("")
+            Mockito.`when`(updateUseCase.updateTrendingDetailsUseCase("", gitTrendingModel))
+                .thenReturn(repositorySuccessResult)
+            viewModel.updateTrendingDetails("", gitTrendingModel)
         }
-        Assert.assertTrue(viewModel.pageState.getTestValue() is PageState.Error)
+        Assert.assertEquals(updatedGitModel, viewModel.trendingModel.getTestValue())
+        Assert.assertTrue(viewModel.pageState.getTestValue() is PageState.Success)
     }
+
 }
