@@ -1,9 +1,9 @@
 # clean-code-mvvm-sample
 This is a sample app that uses clean-code, mvvm architecture. 
 ## Main features
-1. List of top github repository
-***Please Read!!***
-*To demonstrate an api call, this screen fetches a list of github repositories. Please refer to API [document](https://githubtrendingapi.docs.apiary.io/#reference/0/repositories/list-trending-repositories). Swiping the page will refresh the list from the server and will delete any update done locally. This is done for demonstration purposes only.*
+1. List of top github repository  
+***PLEASE READ!***
+  *To demonstrate an api call, this screen fetches a list of github repositories. Please refer to API [document](https://githubtrendingapi.docs.apiary.io/#reference/0/repositories/list-trending-repositories). Swiping the page will refresh the list from the server and will delete any update done locally. This is done for demonstration purposes only. **Details and Edit Page has no API calls***
 2. Details Page
 3. Edit Page
 ### Tech
